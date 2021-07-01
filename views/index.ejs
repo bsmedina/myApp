@@ -5,7 +5,18 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Servicos</h1>
+    <p>Welcome to Servicos</p>
+    <ul>
+      <% for(let i = 0; i < 3; i++) {%>
+        <li>
+          Descrição: <span><%= listaSemDesconto[i].desc %></span>,
+          Preço: <span><%= listaSemDesconto[i].preco %></span>
+          <% if(listaSemDesconto[i].preco > desconto[i]) { %>
+            , Preço com Desconto: <span><%= desconto[i] %></span>
+          <% } %>
+        </li>
+      <% } %>
+    </ul>
   </body>
 </html>
